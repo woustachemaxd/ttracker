@@ -13,7 +13,7 @@ def format_time(time):
     return time.strftime("%Y-%m-%d %H:%M:%S")
 
 while True:
-        
+# if __name__ == '__main__':     
     Dict = {}
     with open('./windowTest.csv', 'r', encoding='utf-8') as file:
         reader = csv.reader(file)
@@ -38,4 +38,9 @@ while True:
     for key in dict(sorted(Dict.items(), key=lambda item: item[1], reverse=True)):
         if Dict[key] > datetime.timedelta(seconds=0):
             print(key, Dict[key])
+            
+    total_time = datetime.timedelta(seconds=0);
+    for key in Dict.keys():
+        total_time += Dict[key]
+    print("Total Time: ", total_time)
     time.sleep(4)
