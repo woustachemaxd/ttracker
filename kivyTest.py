@@ -16,7 +16,7 @@ class MyScreen(BoxLayout):
         hex_color = "#171718"  
         rgba_color = [int(hex_color[i:i+2], 16) / 255.0 for i in (1, 3, 5)] + [1.0]  
         Window.clearcolor = rgba_color
-
+        
         self.label = Label(
             text="00hrs 00mins 00secs",
             font_name="dotbold",
